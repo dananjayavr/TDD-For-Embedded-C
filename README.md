@@ -25,4 +25,4 @@ git submodule update --init --recursive
 
 ## TODO
 
-- Once Mocking has been introduced, add (FFF)[https://github.com/meekrosoft/fff] to the repository
+- Once Mocking has been introduced, add [FFF](https://github.com/meekrosoft/fff) to the repository
