@@ -25,5 +25,6 @@ git submodule update --init --recursive
 
 ## TODO
 
+- Setup GitHub Actions to demonstrate CI/CD with these test-harnesses
 - Once Mocking has been introduced, add [FFF](https://github.com/meekrosoft/fff) to the repository
 - At the end of the book, add [Ceedling](https://github.com/ThrowTheSwitch/Ceedling) to the repository
