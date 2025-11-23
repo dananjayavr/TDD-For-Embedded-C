@@ -5,7 +5,11 @@ This repository contains source code as well as two test-harnesses used througho
 - `Unity`
 - `cpputest`
 
-Each project is tracked as a **Git submodule**, preserving its independent history.
+Additional test harness(es) are only for testing purposes : 
+
+- `googletest`
+
+Each test-harness is tracked as a Git submodule.
 
 ---
 
