@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.20)
 project(ch2s)
 
+# GoogleTest requires at least C++17
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Test Harness - CppUTest
 
 SET(CppUTestRootDirectory ../cpputest)
@@ -61,3 +65,18 @@ target_compile_definitions(app_simple PUBLIC DEBUG)
 target_link_libraries(app_simple PUBLIC Unity)
 target_compile_definitions(app_fixtures PUBLIC DEBUG)
 target_link_libraries(app_fixtures PUBLIC Unity)
+
+
+# Test Harness - Google Test
+
+SET(GoogleTestRootDirectory ../googletest)
+add_subdirectory(${GoogleTestRootDirectory} googletest)
+add_executable(app_googletest googletest/main.cpp)
+target_link_libraries(app_googletest
+    PRIVATE
+    GTest::gtest_main
+)
+
+include(CTest) # Enable testing
+include(GoogleTest)
+gtest_discover_tests(app_googletest)

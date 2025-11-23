@@ -4,8 +4,6 @@
 #include "CppUTest/TestHarness.h"
 #include "CppUTest/CommandLineTestRunner.h"
 
-static SimpleString* buffer;
-
 TEST_GROUP(sprintf)
 {
     char output[100];
