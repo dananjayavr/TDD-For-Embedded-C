@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.20)
 project(ch4)
 
-# Test Harness - Unity
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_BUILD_TYPE Debug)
 
+# Test Harness - Unity
 add_library(Unity STATIC
   ../Unity/src/unity.c
   ../Unity/extras/fixture/src/unity_fixture.c
@@ -17,14 +19,14 @@ target_include_directories(Unity PUBLIC
 )
 
 add_executable(led_tests
-  ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/src/LedDriver.c 
+  ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/src/LedDriver.c
   ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/test/LedDriverTest.c
   ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/test/LedDriverTestRunner.c
-  ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/test/AllTests.c 
+  ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/test/AllTests.c
 )
 
-target_include_directories(led_tests PUBLIC 
-    ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/src 
+target_include_directories(led_tests PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/src
 )
 
 target_compile_definitions(led_tests PUBLIC DEBUG)
