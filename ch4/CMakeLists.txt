@@ -23,10 +23,14 @@ add_executable(led_tests
   ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/test/LedDriverTest.c
   ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/test/LedDriverTestRunner.c
   ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/test/AllTests.c
+
+  ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/mocks/RuntimeErrorStub.c
 )
 
 target_include_directories(led_tests PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/mocks
+    ${CMAKE_CURRENT_SOURCE_DIR}/LedDriver/util
 )
 
 target_compile_definitions(led_tests PUBLIC DEBUG)
